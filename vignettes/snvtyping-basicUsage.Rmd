@@ -26,11 +26,6 @@ library(BiocStyle)
 library(knitr)
 ```
 
-```{r, echo = FALSE}
-devtools::session_info()
-```
-
-
 ```{r setup}
 library(snvtyping)
 ```
@@ -88,4 +83,10 @@ Finally, it's possible to plot all the reference contexts grouped by the SNV typ
 
 ```{r}
 plotSnvTypes(vcf, context)
+```
+
+## Appendix
+
+```{r, echo = FALSE}
+devtools::session_info()
 ```

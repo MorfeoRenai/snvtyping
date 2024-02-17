@@ -15,7 +15,7 @@
 #' @importFrom VariantAnnotation ref
 #' @importFrom VariantAnnotation alt
 #'
-#' @example R/examples/preprocessVcf-example.R
+#' @example man/examples/preprocessVcf-example.R
 #'
 preprocessVcf <- function(vcf) {
     if (!(inherits(vcf, "ExpandedVcf"))) {

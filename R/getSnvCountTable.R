@@ -10,7 +10,7 @@
 #' @return Count table of SNVs
 #' @export
 #'
-#' @example R/examples/getSnvCountTable-example.R
+#' @example man/examples/getSnvCountTable-example.R
 #'
 getSnvCountTable <- function(vcf, context, type = "context"){
     # build main data frame

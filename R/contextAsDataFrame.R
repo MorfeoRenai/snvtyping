@@ -14,7 +14,7 @@
 #' @importFrom S4Vectors width
 #' @importFrom VariantAnnotation alt
 #'
-#' @example R/examples/contextAsDataFrame-example.R
+#' @example man/examples/contextAsDataFrame-example.R
 #'
 contextAsDataFrame <- function(vcf, context){
     # check parameters

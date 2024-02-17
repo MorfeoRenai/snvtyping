@@ -8,6 +8,14 @@
 \description{
 This package can analyze VCF files containing SNV mutations and convert them in a readable Data Frame. The main feature is to get the genomic context of all Single Nucleotide Variants mutations in a VCF file; it can also classify and plot them.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/MorfeoRenai/snvtyping}
+  \item Report bugs at \url{https://github.com/MorfeoRenai/snvtyping/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Alessandro Pandolfi \email{alessandro.pandolfi@protonmail.com}
 

@@ -6,10 +6,10 @@ Authors@R:
     email = "alessandro.pandolfi@protonmail.com",
     role = c("aut", "cre"))
 Description: 
-    This package can analyze VCF files containing SNV mutations and convert them
-    in a readable Data Frame.
-    The main feature is to get the genomic context of all Single Nucleotide 
-    Variants mutations in a VCF file; it can also classify and plot them.
+    The goal of `snvtyping` is to preprocess and analyze VCF files containing
+    SNV mutations, by getting the genomic context of all of its Single
+    Nucleotide Variants mutations. It can also classify group them by type of
+    SNV, by type of context and then plot their frequency.
 License: GPL-3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)

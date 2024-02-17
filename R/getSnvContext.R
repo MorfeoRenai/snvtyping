@@ -22,7 +22,7 @@
 #' @importFrom GenomicRanges GRanges
 #' @importFrom Biostrings getSeq
 #'
-#' @example R/examples/getSnvContext-example.R
+#' @example man/examples/getSnvContext-example.R
 #'
 getSnvContext <- function(vcf, genome, context.len = 3){
     if (!inherits(vcf, "ExpandedVCF")) {

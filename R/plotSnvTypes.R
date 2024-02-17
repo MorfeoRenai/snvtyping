@@ -12,7 +12,7 @@
 #' @import ggplot2
 #' @import dplyr
 #'
-#' @example R/examples/plotSnvTypes-example.R
+#' @example man/examples/plotSnvTypes-example.R
 plotSnvTypes <- function(vcf, context){
     # build main data frame
     df <- contextAsDataFrame(vcf, context)
