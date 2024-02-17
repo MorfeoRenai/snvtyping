@@ -1,6 +1,6 @@
 Package: snvtyping
 Title: Genomic Context of SNVs From VCF File
-Version: 0.99.0
+Version: 0.1.0
 Authors@R: 
     person("Alessandro", "Pandolfi",
     email = "alessandro.pandolfi@protonmail.com",
@@ -37,3 +37,5 @@ Config/testthat/edition: 3
 LazyData: false
 VignetteBuilder: knitr
 biocViews: VariantAnnotation, SNP, Genetics, Software
+URL: https://github.com/MorfeoRenai/snvtyping
+BugReports: https://github.com/MorfeoRenai/snvtyping/issues
