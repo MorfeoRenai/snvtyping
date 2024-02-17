@@ -1,0 +1,91 @@
+---
+title: "Basic Usage of the Package `snvtyping`"
+author:
+    name: "Alessandro Pandolfi"
+    email: "alessandro.pandolfi@protonmail.com"
+date: "`r Sys.Date()`"
+output: BiocStyle::html_document
+vignette: >
+    %\VignetteIndexEntry{Basic Usage of the Package `snvtyping`}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+    collapse = TRUE,
+    comment = "#>"
+)
+```
+
+```{r style, echo = FALSE, results='asis'}
+library(BiocStyle)
+```
+
+```{r, echo = FALSE}
+library(knitr)
+```
+
+```{r, echo = FALSE}
+devtools::session_info()
+```
+
+
+```{r setup}
+library(snvtyping)
+```
+
+Let's define the path to the VCF file and global parameters.
+
+```{r}
+# global parameters
+context.len <- 3
+genome <- BSgenome.Hsapiens.UCSC.hg19::Hsapiens
+```
+
+Let's load data from the VCF file.
+
+```{r}
+# reading VCF file
+fl <- system.file("extdata", "chr7-sub.vcf.gz", package="VariantAnnotation",
+                  mustWork=TRUE)
+vcf <- VariantAnnotation::readVcf(fl)
+vcf <- VariantAnnotation::expand(vcf)
+```
+
+`snvtyping` package can preprocess the `ExpandedVCF` object, limiting the analysis only to Single Nucleotide Variants (SNVs).
+
+```{r}
+# preprocess VCF file
+vcf <- preprocessVcf(vcf)
+```
+
+`snvtyping` package's main feature is to fetch genomic context sequence (the sequence around the SNV position) for every SNV in the VCF file. It returns a standard `DNAStringSet` object.
+
+```{r}
+context <- getSnvContext(vcf, genome, context.len)
+context
+```
+
+If any further analysis is needed, `snvtyping` package can coerce the `DNAStringSet` object in a human-readable Data Frame.
+
+```{r}
+df <- contextAsDataFrame(vcf, context)
+head(df)
+```
+
+Then it is possible to compute count tables of SNVs. There are two options: a simple count table of all contexts or else a count table of reference contexts by SNV type. The latter can be of help for deducing the liability to mutation of a specific context sequence.
+
+```{r}
+getSnvCountTable(vcf, context, type = "context")
+```
+
+```{r}
+getSnvCountTable(vcf, context, type = "context.by.snv")
+```
+
+Finally, it's possible to plot all the reference contexts grouped by the SNV types.
+
+```{r}
+plotSnvTypes(vcf, context)
+```

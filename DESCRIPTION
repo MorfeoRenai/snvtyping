@@ -1,0 +1,39 @@
+Package: snvtyping
+Title: Genomic Context of SNVs From VCF File
+Version: 0.99.0
+Authors@R: 
+    person("Alessandro", "Pandolfi",
+    email = "alessandro.pandolfi@protonmail.com",
+    role = c("aut", "cre"))
+Description: 
+    This package can analyze VCF files containing SNV mutations and convert them
+    in a readable Data Frame.
+    The main feature is to get the genomic context of all Single Nucleotide 
+    Variants mutations in a VCF file; it can also classify and plot them.
+License: GPL-3
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.1
+Imports: 
+    BiocGenerics,
+    Biostrings,
+    GenomeInfoDb,
+    GenomicRanges,
+    IRanges,
+    S4Vectors,
+    VariantAnnotation
+Suggests: 
+    BSgenome.Hsapiens.UCSC.hg19,
+    BiocStyle,
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0),
+    devtools
+Depends:
+    dplyr,
+    ggplot2,
+    R (>= 4.3)
+Config/testthat/edition: 3
+LazyData: false
+VignetteBuilder: knitr
+biocViews: VariantAnnotation, SNP, Genetics, Software
